@@ -1,0 +1,17 @@
+How can I sample from a mixture distribution, and in particular a mixture of Normal distributions in R? 
+For example, if I wanted to sample from:
+
+0.3×N(0,1)+0.5×N(10,1)+0.2×N(3,.1)
+
+In general, one of the easiest ways to sample from a mixture distribution is the following:
+
+Algorithm Steps
+
+1) Generate a random variable U∼Uniform(0,1)
+
+2) If U∈[∑ki=1pk,∑k+1i=1pk+1)
+interval, where pk correspond to the the probability of the kth component of the mixture model, then generate from thedistribution of the kth
+
+component
+
+3) Repeat steps 1) and 2) until you have the desired amount of samples from the mixture distribution
